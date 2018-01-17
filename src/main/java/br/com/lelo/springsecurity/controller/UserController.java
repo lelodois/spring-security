@@ -38,6 +38,11 @@ public class UserController {
 		binder.addValidators(userCreateFormValidator);
 	}
 
+	@RequestMapping("/user/all")
+	public ModelAndView getUsersPage() {
+		return new ModelAndView("users", "users", userService.getAllUsers());
+	}
+
 	@PreAuthorize("@currentUserServiceImpl.canAccessUser(principal, #id)")
 	@RequestMapping("/user/{id}")
 	public ModelAndView getUserPage(@PathVariable Long id) {

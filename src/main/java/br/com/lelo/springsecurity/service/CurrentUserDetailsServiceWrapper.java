@@ -9,12 +9,12 @@ import br.com.lelo.springsecurity.domain.CurrentUser;
 import br.com.lelo.springsecurity.domain.User;
 
 @Service
-public class CurrentUserDetailsService implements UserDetailsService {
+public class CurrentUserDetailsServiceWrapper implements UserDetailsService {
 
 	private final UserService userService;
 
 	@Autowired
-	public CurrentUserDetailsService(UserService userService) {
+	public CurrentUserDetailsServiceWrapper(UserService userService) {
 		this.userService = userService;
 	}
 

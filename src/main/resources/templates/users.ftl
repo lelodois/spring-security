@@ -1,11 +1,13 @@
+<#import "static.ftl" as static>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 	    <meta charset="utf-8">
-	    <title>List of Users</title>
+		<@static.css/>
+		<@static.js/>
 	</head>
 	<body>
-		<nav role="navigation">
+		<nav role="navigation" class="sidebar                  responsive">
 		    <ul>
 		        <li><a href="/">Home</a></li>
 		        <li><a href="/user/create">Create a new user</a></li>
@@ -14,7 +16,7 @@
 		
 		<h1>List of Users</h1>
 		
-		<table>
+		<table class="table table-striped table-bordered table-hover">
 		    <thead>
 		    <tr>
 		        <th>E-mail</th>

@@ -1,12 +1,14 @@
+<#import "static.ftl" as static>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 	    <meta charset="utf-8">
-	    <title>Home page</title>
+		<@static.css/>
+		<@static.js/>
 	</head>
 	<body>
-		<nav role="navigation">
-		    <ul>
+		<h1>Home</h1>
+		<ul>
 		    <#if !currentUser??>
 		        <li><a href="/login">Log in</a></li>
 		    </#if>
@@ -21,9 +23,8 @@
 		    </#if>
 		    <#if currentUser?? && currentUser.role == "ADMIN">
 		        <li><a href="/user/create">Create a new user</a></li>
-		        <li><a href="/users">View all users</a></li>
+		        <li><a href="/user/all">View all users</a></li>
 		    </#if>
-		    </ul>
-		</nav>
+		</ul>
 	</body>
-</html>
+<html>

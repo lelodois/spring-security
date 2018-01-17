@@ -1,9 +1,11 @@
+<#import "static.ftl" as static>
 <#import "/spring.ftl" as spring>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 	    <meta charset="utf-8">
-	    <title>Create a new user</title>
+		<@static.css/>
+		<@static.js/>
 	</head>
 	<body>
 		<nav role="navigation">
@@ -12,7 +14,7 @@
 		    </ul>
 		</nav>
 		
-		<h1>Create a new user</h1>
+		<h1>New user</h1>
 		
 		<form role="form" name="form" action="" method="post">
 		    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -40,6 +42,7 @@
 		</form>
 		
 		<@spring.bind "form" />
+		
 		<#if spring.status.error>
 			<ul>
 			    <#list spring.status.errorMessages as error>

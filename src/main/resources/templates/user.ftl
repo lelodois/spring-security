@@ -1,8 +1,10 @@
+<#import "static.ftl" as static>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 	    <meta charset="utf-8">
-	    <title>User details</title>
+		<@static.css/>
+		<@static.js/>
 	</head>
 	<body>
 		<nav role="navigation">
